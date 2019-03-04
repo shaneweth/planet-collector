@@ -1,0 +1,48 @@
+body {
+    background-image: url("images/black-linen-2.png");
+    background-size: 100%;
+    position: fixed;
+    font-family: 'Oswald', sans-serif;
+    size: 100%;
+    margin: auto;
+}
+
+img {
+    width: 15em;
+    height: 18em;
+    padding: .5em;
+    float: left;
+    border-width:.8em;  
+    border-style: inset;
+    border-block-start-color: burlywood;
+    margin: 2em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5em;
+    font-stretch: 3em;
+    font-family: 'Oswald', sans-serif;
+    color: antiquewhite; 
+    size: 100%;   
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+#points-store {
+    text-align: center;
+    font-size: 3em;
+    color: antiquewhite;
+    size: 100%;
+
+}
+
+#win-tracker, #loss-tracker {
+    float: left;
+    font-size: 2em; 
+    color: antiquewhite;
+    size: 100%;
+}

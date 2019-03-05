@@ -51,11 +51,13 @@ $(".tree").on("click", function () {
         // alert("winner");
         winTrack++;
         $("#win-tracker").text("You've won " + winTrack + " Baskets...")
+        pointStore = 0;
     }
     else if (pointStore > targetNumber) {
         // alert("loser");
         lossTrack++;
         $("#loss-tracker").text("You've lost " + lossTrack + " Baskets...")
+        pointStore = 0;
     }
 
 });

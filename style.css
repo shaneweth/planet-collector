@@ -32,16 +32,20 @@ h2 {
     font-size: 2em;
 }
 
+.targetNumber {
+    color: maroon;
+}
 #points-store {
     text-align: center;
     font-size: 3em;
-    color: antiquewhite;
+    color: darkolivegreen;
     size: 100%;
 
 }
 
 #win-tracker, #loss-tracker {
-    float: left;
+    display: inline-block;
+    margin-left: 20%;
     font-size: 2em; 
     color: antiquewhite;
     size: 100%;

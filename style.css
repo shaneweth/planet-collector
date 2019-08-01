@@ -1,17 +1,60 @@
 body {
-    background-image: url("images/black-linen-2.png");
-    background-size: 100%;
-    position: fixed;
+    /* background-image: url("images/tree_bg.jpg"); */
+    /* background-size: cover; */
     font-family: 'Oswald', sans-serif;
-    size: 100%;
-    margin: auto;
+    margin: 0;
+    padding: 0;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+                        " header header header header "
+                        " . main main . "
+                        " score score score score ";
+
+}
+
+header {
+    grid-area: header;
+    border: rebeccapurple 1px solid;
+}
+
+main {
+    grid-area: main;
+    border: black 1px solid;
+}
+
+.score {
+    grid-area: score;
+    border: red 1px solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+                        " current current current current "
+                        " . winTracker lossTracker . "
+}
+
+.current {
+    grid-area: current;
+}
+
+.winTracker {
+    grid-area: winTracker;
+}
+
+.lossTracker {
+    grid-area: lossTracker;
+}
+
+/* .stage {
+    
+} */
+
 img {
-    width: 15em;
-    height: 18em;
-    padding: .5em;
-    float: left;
+    height: 26rem;
+    width: 20rem;
     border-width:.8em;  
     border-style: inset;
     border-block-start-color: burlywood;
@@ -24,7 +67,6 @@ h1 {
     font-stretch: 3em;
     font-family: 'Oswald', sans-serif;
     color: antiquewhite; 
-    size: 100%;   
 }
 
 h2 {
@@ -38,15 +80,12 @@ h2 {
 #points-store {
     text-align: center;
     font-size: 3em;
-    color: darkolivegreen;
-    size: 100%;
+    color: rgb(107, 47, 47);
 
 }
 
 #win-tracker, #loss-tracker {
-    display: inline-block;
-    margin-left: 20%;
     font-size: 2em; 
-    color: antiquewhite;
-    size: 100%;
+    color: black;
+    text-align: center;
 }

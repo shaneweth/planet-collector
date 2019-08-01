@@ -7,36 +7,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Game</title>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 </head>
 
 <body>
-    <header>
+    <div class="grid-container">
+        <header class="header">
 
-        <h1>Can you pick <span class="targetNumber"></span> fruits from the trees?</h1>
+            <h1>Can you pick <span class="targetNumber"></span> fruits from the trees?</h1>
 
-        
-    </header>
-    <main>
 
-        <div id="instruction"><h2> Each Tree has a certain value. Choose only the amount noted above. </h2></div>
+        </header>
+        <main class="main">
 
-        <div id="stage"></div>
-        <h3 id="points-store"></h3>
+            <div id="instruction">
+                <h2> Each Tree has a certain value. Choose only the amount noted above. </h2>
+            </div>
 
-        <div id="win-tracker"></div>
-        <div id="loss-tracker"></div>
+            <div id="stage"></div>
+        </main>
 
-    </main>
+        <div class="score">
+            <div class="current">
+                <h3 id="points-store"></h3>
+            </div>
+            <div class="winTracker">
+                <div id="win-tracker"></div>
+            </div>
+            <div class="lossTracker">
+                <div id="loss-tracker"></div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
-        </script>
-
-
+    </script>
     <script src="assets/game.js"></script>
 
 </body>

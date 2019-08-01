@@ -30,7 +30,7 @@ main {
     grid-area: score;
     border: red 1px solid;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas: 
                         " current current current current "
                         " . winTracker lossTracker . "

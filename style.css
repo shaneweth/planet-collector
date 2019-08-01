@@ -1,6 +1,8 @@
 body {
-    /* background-image: url("images/tree_bg.jpg"); */
-    /* background-size: cover; */
+    /* background-image: radial-gradient(circle, black, 20%, black, black, rgb(121, 120, 120), black, rgb(102, 102, 102), black, rgb(119, 119, 119), black, silver, black); */
+    background-image: url('./images/spacebg.jpg');
+    background-size: cover;
+    background-position: center;
     font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
@@ -8,22 +10,139 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas: 
                         " header header header header "
                         " . main main . "
                         " score score score score ";
-
 }
 
 header {
     grid-area: header;
-    border: rebeccapurple 1px solid;
+    height: 20rem;
 }
 
 main {
     grid-area: main;
+    height: 60vmax;
+    padding: 2em;
     border: black 1px solid;
+}
+
+
+.center-circle {
+    position: relative;
+    top: 20vmax;
+    margin: auto auto;
+    width: 10em;
+    height: 10em;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.center-circle:hover {
+    cursor: pointer;
+}
+
+.quarter-circle-1 {
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    top: 50%;
+    left: 0%;
+    border: 5px solid rgba(117, 117, 117, 0.473);
+    border-radius: 100%;
+    transform: translateX(-100%) translateY(-25%) rotate(90deg);
+    animation: spin-back-1 4s ease-in-out forwards;
+    transform-origin: calc(100% + 5em) 50%;
+    background-image: url('./images/blue.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.quarter-circle-2 {
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    top: 50%;
+    left: 0%;
+    border: 5px solid rgba(117, 117, 117, 0.473);
+    border-radius: 100%;
+    transform: translateX(-100%) translateY(-25%) rotate(90deg);
+    animation: spin-back-2 3s ease-in-out forwards;
+    transform-origin: calc(100% + 5em) 50%;
+    background-image: url('./images/diamond.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.quarter-circle-3 {
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    top: 50%;
+    left: 0%;
+    border: 5px solid rgba(117, 117, 117, 0.473);
+    border-radius: 100%;
+    transform: translateX(-100%) translateY(25%) rotate(90deg);
+    animation: spin-back-3 2s ease-in-out forwards;
+    transform-origin: calc(100% + 5em) 50%;
+    background-image: url('./images/exoplanet.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.quarter-circle-4 {
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    top: 50%;
+    left: 0%;
+    border: 5px solid rgba(117, 117, 117, 0.473);
+    border-radius: 100%;
+    transform: translateX(-100%) translateY(-25%) rotate(90deg);
+    animation: spin-back-4 5s ease-in-out forwards;
+    transform-origin: calc(100% + 5em) 50%;
+    background-image: url('./images/rings.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+@keyframes spin-back-1 {
+    0% {
+        transform: translateX(-100%) translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-100%) translateY(-50%) rotate(270deg);
+    }
+}
+@keyframes spin-back-2 {
+    0% {
+        transform: translateX(-100%) translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-100%) translateY(-50%) rotate(180deg);
+    }
+}
+@keyframes spin-back-3 {
+    0% {
+        transform: translateX(-100%) translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-100%) translateY(-50%) rotate(90deg);
+    }
+}
+@keyframes spin-back-4 {
+    0% {
+        transform: translateX(-100%) translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-100%) translateY(-50%) rotate(360deg);
+    }
 }
 
 .score {
@@ -48,17 +167,11 @@ main {
     grid-area: lossTracker;
 }
 
-/* .stage {
-    
-} */
-
 img {
-    height: 26rem;
-    width: 20rem;
-    border-width:.8em;  
-    border-style: inset;
-    border-block-start-color: burlywood;
-    margin: 2em;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 10%;
+  
 }
 
 h1 {
@@ -66,7 +179,7 @@ h1 {
     font-size: 5em;
     font-stretch: 3em;
     font-family: 'Oswald', sans-serif;
-    color: black; 
+    color: white; 
 }
 
 h2 {
@@ -75,7 +188,7 @@ h2 {
 }
 
 .targetNumber {
-    color: maroon;
+    color: rgb(248, 33, 33);
 }
 #points-store {
     text-align: center;

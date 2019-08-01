@@ -19,9 +19,9 @@ $(".targetNumber").text(targetNumber);
 // 
 var treeArr = [
     "images/ApTree.jpg",
-    "images/Botanical-Fruit-Plums-Italian-2-780x964.jpg",
-    "images/cherry-blossom-botanical-illustration.jpg",
-    "images/Dovyalis_caffra_botanical_illustration.jpg",
+    // "images/Botanical-Fruit-Plums-Italian-2-780x964.jpg",
+    // "images/cherry-blossom-botanical-illustration.jpg",
+    // "images/Dovyalis_caffra_botanical_illustration.jpg",
 ];
 
 for (var i = 0; i < 4; i++) {
@@ -33,16 +33,52 @@ for (var i = 0; i < 4; i++) {
 
     tree.addClass("tree");
 
-    $("#stage").append(tree);
+    $(".quarter-circle-1").append(tree);
+
+}
+for (var i = 0; i < 4; i++) {
+    var tree = $("<img>"); 
+
+    tree.attr("src", treeArr[i]);
+
+    tree.attr("data-points", Math.floor(Math.random() * 12) + 1); 
+
+    tree.addClass("tree");
+
+    $(".quarter-circle-2").append(tree);
+
+}
+for (var i = 0; i < 4; i++) {
+    var tree = $("<img>"); 
+
+    tree.attr("src", treeArr[i]);
+
+    tree.attr("data-points", Math.floor(Math.random() * 12) + 1); 
+
+    tree.addClass("tree");
+
+    $(".quarter-circle-3").append(tree);
+
+}
+for (var i = 0; i < 4; i++) {
+    var tree = $("<img>"); 
+
+    tree.attr("src", treeArr[i]);
+
+    tree.attr("data-points", Math.floor(Math.random() * 12) + 1); 
+
+    tree.addClass("tree");
+
+    $(".quarter-circle-4").append(tree);
 
 }
 
 $(".tree").on("click", function () {
-    var treeVal = ($(this).attr("data-points"));
+    var planetValue = ($(this).attr("data-points"));
 
     pointStore += parseInt(treeVal);
 
-    $("#points-store").text("You have " + pointStore + " points.")
+    $("#points-store").text("This is the  " + pointStore + " pointStore.")
 
 
 

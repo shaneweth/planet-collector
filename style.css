@@ -1,6 +1,6 @@
 body {
     /* background-image: radial-gradient(circle, black, 20%, black, black, rgb(121, 120, 120), black, rgb(102, 102, 102), black, rgb(119, 119, 119), black, silver, black); */
-    background-image: url('./images/spacebg.jpg');
+    background-image: url('./assets/images/spacebg.jpg');
     background-size: cover;
     background-position: center;
     font-family: 'Oswald', sans-serif;
@@ -24,15 +24,14 @@ header {
 
 main {
     grid-area: main;
-    height: 30vmax;
+    height: 50em;
     padding: 1em;
     border: black 1px solid;
 }
 
-
 .center-circle {
     position: relative;
-    top: 12vmax;
+    top: 20em;
     margin: auto auto;
     width: 10em;
     height: 10em;
@@ -57,7 +56,7 @@ main {
     transform: translateX(-100%) translateY(-25%) rotate(90deg);
     animation: spin-back-1 4s ease-in-out forwards;
     transform-origin: calc(100% + 5em) 50%;
-    background-image: url('./images/blue.jpg');
+    background-image: url('./assets/images/diamond.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -73,7 +72,7 @@ main {
     transform: translateX(-100%) translateY(-25%) rotate(90deg);
     animation: spin-back-2 3s ease-in-out forwards;
     transform-origin: calc(100% + 5em) 50%;
-    background-image: url('./images/diamond.jpg');
+    background-image: url('./assets/images/rings.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -90,7 +89,7 @@ main {
     transform: translateX(-100%) translateY(25%) rotate(90deg);
     animation: spin-back-3 2s ease-in-out forwards;
     transform-origin: calc(100% + 5em) 50%;
-    background-image: url('./images/exoplanet.jpg');
+    background-image: url('./assets/images/blue.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -107,7 +106,7 @@ main {
     transform: translateX(-100%) translateY(-25%) rotate(90deg);
     animation: spin-back-4 5s ease-in-out forwards;
     transform-origin: calc(100% + 5em) 50%;
-    background-image: url('./images/rings.jpg');
+    background-image: url('./assets/images/exoplanet.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -153,7 +152,8 @@ main {
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas: 
                         " current current current current "
-                        " . winTracker lossTracker . "
+                        " . winTracker lossTracker . ";
+    
 }
 
 .current {
@@ -166,13 +166,6 @@ main {
 
 .lossTracker {
     grid-area: lossTracker;
-}
-
-img {
-    height: 8rem;
-    width: 8rem;
-    border-radius: 10%;
-  
 }
 
 h1 {
@@ -191,11 +184,12 @@ h2 {
 .targetNumber {
     color: rgb(248, 33, 33);
 }
+
 #points-store {
+    margin-top: 10rem;
     text-align: center;
     font-size: 3em;
     color: white;
-
 }
 
 #win-tracker, #loss-tracker {

@@ -1,20 +1,16 @@
 $(document).ready(function () {
+    let pointStore;
 
-    let pointStore = 0;
     let winTrack = 0;
     let lossTrack = 0;
-    const targetMin = 19;
-    const targetMax = 120;
-    let targetNumber = Math.floor(Math.random() * (targetMax - targetMin + 1) + targetMin);
 
-    $(".resetBtn").on("click", function () {
-        resetNumber();
-    })
+    let randomTarget = generateTargetNumber();
 
-    function resetNumber() {
-        // point storage
+    function generateTargetNumber() {
+        return Math.floor(Math.random() * 102) + 19;
+    }
 
-        // assign a random number value to .quarter-circle's
+    function generatePlanetValue() {
 
         let planet1 = $(".quarter-circle-1");
         planet1.attr("data-points", Math.floor(Math.random() * (12 - 9) + 9));
@@ -38,63 +34,100 @@ $(document).ready(function () {
 
     }
 
-    function game() {
+    function resetAnimation() {
 
-        $(".targetNumber").text(targetNumber);
+        let planets = $(".quarter-circle-1, .quarter-circle-2, .quarter-circle-3, .quarter-circle-4");
+        newPlanets = planets.clone(true);
 
-        // click listeners for qc's
-        $(".quarter-circle-1").on("click", function () {
-            let planetVal1 = ($(this).attr("data-points"));
-            pointStore += parseInt(planetVal1);
-            $("#points-store").text("This is the  " + pointStore + " pointStore.")
-            tracker();
-        })
+        planets.before(newPlanets);
 
-        $(".quarter-circle-2").on("click", function () {
-            let planetVal2 = ($(this).attr("data-points"));
-            pointStore += parseInt(planetVal2);
-            $("#points-store").text("This is the  " + pointStore + " pointStore.")
-            tracker();
-        })
+        $("." + planets.attr("class") + ":last").remove();
+    };
 
-        $(".quarter-circle-3").on("click", function () {
-            let planetVal3 = ($(this).attr("data-points"));
-            pointStore += parseInt(planetVal3);
-            $("#points-store").text("This is the  " + pointStore + " pointStore.")
-            tracker();
-        })
-
-        $(".quarter-circle-4").on("click", function () {
-            let planetVal4 = ($(this).attr("data-points"));
-            pointStore += parseInt(planetVal4);
-            $("#points-store").text("This is the  " + pointStore + " pointStore.")
-            tracker();
-        })
-        resetNumber();
+    function resetGame() {
+        pointStore = 0;
+        generatePlanetValue();
+        randomTarget = generateTargetNumber();
+        $(".targetNumber").text(randomTarget);
+        // resetAnimation();
     }
+
+    function showWinLose(userWins) {
+        $("#win-lose-display").empty();
+
+        // if Won
+        if (userWins === true) {
+            $("#win-lose-display").append($("<p>").text("Well Done - You Won."));
+            resetGame();
+            renderPointStore();
+        }
+        else if (userWins === false) {
+            $("#win-lose-display").append($("<p>").text("Not Good, Friend. It appears you didn't Win."));
+            resetGame();
+            renderPointStore();
+        }
+
+    }
+
+
+
+
+
+
+    function renderPointStore() {
+        let scoreDiv = $("<div id='score-number'>").text(pointStore);
+        $(".point-store").html();
+        $(".point-store").html(scoreDiv);
+    }
+
+    resetGame();
+    showWinLose();
+    renderPointStore();
+
+
+    // click listeners for qc's
+    $(".quarter-circle-1").on("click", function () {
+        let planetVal1 = ($(this).attr("data-points"));
+        pointStore += parseInt(planetVal1);
+        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        tracker();
+    })
+
+    $(".quarter-circle-2").on("click", function () {
+        let planetVal2 = ($(this).attr("data-points"));
+        pointStore += parseInt(planetVal2);
+        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        tracker();
+    })
+
+    $(".quarter-circle-3").on("click", function () {
+        let planetVal3 = ($(this).attr("data-points"));
+        pointStore += parseInt(planetVal3);
+        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        tracker();
+    })
+
+    $(".quarter-circle-4").on("click", function () {
+        let planetVal4 = ($(this).attr("data-points"));
+        pointStore += parseInt(planetVal4);
+        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        tracker();
+    })
+
     // change alert to print to page and add new win to ("#win-tracker")
 
     function tracker() {
-        if (pointStore === targetNumber) {
+
+        if (pointStore === randomTarget) {
             winTrack++;
             $("#win-tracker").text("You've collected " + winTrack + ". Well Done.")
-            
-            pointStore = 0;
-            game();
-            resetNumber();
-            console.log("game on");
-
+            resetGame();
         }
-        else if (pointStore > targetNumber) {
+
+        else if (pointStore > randomTarget) {
             lossTrack++;
             $("#loss-tracker").text("You've lost " + lossTrack + ". Not Good, Friend.")
-            pointStore = 0;
-            game();
-            resetNumber();
-            console.log("game on");
-
+            resetGame();
         }
     }
-
-    game();
 })

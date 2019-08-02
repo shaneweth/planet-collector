@@ -52,65 +52,51 @@ $(document).ready(function () {
         // resetAnimation();
     }
 
-    function showWinLose(userWins) {
-        $("#win-lose-display").empty();
+    // function showWinLose(userWins) {
+    //     $("#win-lose-display").empty();
 
-        // if Won
-        if (userWins === true) {
-            $("#win-lose-display").append($("<p>").text("Well Done - You Won."));
-            resetGame();
-            renderPointStore();
-        }
-        else if (userWins === false) {
-            $("#win-lose-display").append($("<p>").text("Not Good, Friend. It appears you didn't Win."));
-            resetGame();
-            renderPointStore();
-        }
+    //     // if Won
+    //     if (userWins === true) {
+    //         $("#win-lose-display").append($("<p>").text("Well Done - You Won."));
+    //         resetGame();
+    //     }
+    //     else if (userWins === false) {
+    //         $("#win-lose-display").append($("<p>").text("Not Good, Friend. It appears you didn't Win."));
+    //         resetGame();
+    //     }
 
-    }
-
-
-
-
-
-
-    function renderPointStore() {
-        let scoreDiv = $("<div id='score-number'>").text(pointStore);
-        $(".point-store").html();
-        $(".point-store").html(scoreDiv);
-    }
+    // }
 
     resetGame();
-    showWinLose();
-    renderPointStore();
+
 
 
     // click listeners for qc's
     $(".quarter-circle-1").on("click", function () {
         let planetVal1 = ($(this).attr("data-points"));
         pointStore += parseInt(planetVal1);
-        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        $("#points-store").text("You've collected  " + pointStore + ".")
         tracker();
     })
 
     $(".quarter-circle-2").on("click", function () {
         let planetVal2 = ($(this).attr("data-points"));
         pointStore += parseInt(planetVal2);
-        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        $("#points-store").text("You've collected  " + pointStore + ".")
         tracker();
     })
 
     $(".quarter-circle-3").on("click", function () {
         let planetVal3 = ($(this).attr("data-points"));
         pointStore += parseInt(planetVal3);
-        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        $("#points-store").text("You've collected  " + pointStore + ".")
         tracker();
     })
 
     $(".quarter-circle-4").on("click", function () {
         let planetVal4 = ($(this).attr("data-points"));
         pointStore += parseInt(planetVal4);
-        $("#points-store").text("This is the  " + pointStore + " pointStore.")
+        $("#points-store").text("You've collected  " + pointStore + ".")
         tracker();
     })
 

@@ -26,7 +26,8 @@ main {
     grid-area: main;
     height: 50em;
     padding: 1em;
-    border: black 1px solid;
+    border: rgba(104, 104, 104, 0.692) .5em ridge;
+    border-radius: 50%;
 }
 
 .center-circle {
@@ -35,7 +36,6 @@ main {
     margin: auto auto;
     width: 10em;
     height: 10em;
-    border: 1px solid white;
     border-radius: 100%;
     color: white;
     text-align: center;
@@ -47,11 +47,11 @@ main {
 
 .quarter-circle-1 {
     position: absolute;
-    width: 20em;
-    height: 20em;
+    width: 21em;
+    height: 21em;
     top: 50%;
     left: 0%;
-    border: 5px solid rgba(117, 117, 117, 0.473);
+    border: .5em solid rgba(117, 117, 117, 0.473);
     border-radius: 100%;
     transform: translateX(-100%) translateY(-25%) rotate(90deg);
     animation: spin-back-1 4s ease-in-out forwards;
@@ -63,11 +63,11 @@ main {
 }
 .quarter-circle-2 {
     position: absolute;
-    width: 20em;
-    height: 20em;
+    width: 21em;
+    height: 21em;
     top: 50%;
     left: 0%;
-    border: 5px solid rgba(117, 117, 117, 0.473);
+    border: .5em solid rgba(117, 117, 117, 0.473);
     border-radius: 100%;
     transform: translateX(-100%) translateY(-25%) rotate(90deg);
     animation: spin-back-2 3s ease-in-out forwards;
@@ -80,11 +80,11 @@ main {
 }
 .quarter-circle-3 {
     position: absolute;
-    width: 20em;
-    height: 20em;
+    width: 21em;
+    height: 21em;
     top: 50%;
     left: 0%;
-    border: 5px solid rgba(117, 117, 117, 0.473);
+    border: .5em solid rgba(117, 117, 117, 0.473);
     border-radius: 100%;
     transform: translateX(-100%) translateY(25%) rotate(90deg);
     animation: spin-back-3 2s ease-in-out forwards;
@@ -97,11 +97,11 @@ main {
 }
 .quarter-circle-4 {
     position: absolute;
-    width: 20em;
-    height: 20em;
+    width: 21em;
+    height: 21em;
     top: 50%;
     left: 0%;
-    border: 5px solid rgba(117, 117, 117, 0.473);
+    border: .5em solid rgba(117, 117, 117, 0.473);
     border-radius: 100%;
     transform: translateX(-100%) translateY(-25%) rotate(90deg);
     animation: spin-back-4 5s ease-in-out forwards;
@@ -153,11 +153,11 @@ main {
     grid-template-areas: 
                         " current current current current "
                         " . winTracker lossTracker . ";
-    
 }
 
 .current {
     grid-area: current;
+    padding: 2px;
 }
 
 .winTracker {
@@ -173,7 +173,7 @@ h1 {
     font-size: 5em;
     font-stretch: 3em;
     font-family: 'Oswald', sans-serif;
-    color: white; 
+    color: rgb(197, 197, 197); 
 }
 
 h2 {
@@ -183,17 +183,25 @@ h2 {
 
 .targetNumber {
     color: rgb(248, 33, 33);
+    text-shadow: 0 0 2px white;
 }
 
 #points-store {
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     text-align: center;
     font-size: 3em;
     color: white;
+    margin: 2px;
+    border: 2px rgba(192, 192, 192, 0.342) ridge;
+    border-radius: 1rem;
+    background-image: repeating-radial-gradient(circle, black, black, black, white, black, silver, black);
 }
 
 #win-tracker, #loss-tracker {
     font-size: 2em; 
-    color: white;
+    color: rgb(182, 182, 182);
     text-align: center;
+    height: 2.1em;
+    border: .5em rgba(255, 255, 255, 0.356) solid;
+    border-radius: 1rem;
 }

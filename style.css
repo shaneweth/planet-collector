@@ -14,25 +14,25 @@ body {
     grid-template-areas: 
                         " header header header header "
                         " . main main . "
-                        " score score score score ";
+                        " score score score score";
 }
 
 header {
     grid-area: header;
-    height: 20rem;
+    height: 10rem;
 }
 
 main {
     grid-area: main;
-    height: 60vmax;
-    padding: 2em;
+    height: 30vmax;
+    padding: 1em;
     border: black 1px solid;
 }
 
 
 .center-circle {
     position: relative;
-    top: 20vmax;
+    top: 12vmax;
     margin: auto auto;
     width: 10em;
     height: 10em;
@@ -46,8 +46,8 @@ main {
 
 .quarter-circle-1 {
     position: absolute;
-    width: 25em;
-    height: 25em;
+    width: 20em;
+    height: 20em;
     top: 50%;
     left: 0%;
     border: 5px solid rgba(117, 117, 117, 0.473);
@@ -62,8 +62,8 @@ main {
 }
 .quarter-circle-2 {
     position: absolute;
-    width: 25em;
-    height: 25em;
+    width: 20em;
+    height: 20em;
     top: 50%;
     left: 0%;
     border: 5px solid rgba(117, 117, 117, 0.473);
@@ -79,8 +79,8 @@ main {
 }
 .quarter-circle-3 {
     position: absolute;
-    width: 25em;
-    height: 25em;
+    width: 20em;
+    height: 20em;
     top: 50%;
     left: 0%;
     border: 5px solid rgba(117, 117, 117, 0.473);
@@ -96,8 +96,8 @@ main {
 }
 .quarter-circle-4 {
     position: absolute;
-    width: 25em;
-    height: 25em;
+    width: 20em;
+    height: 20em;
     top: 50%;
     left: 0%;
     border: 5px solid rgba(117, 117, 117, 0.473);
@@ -147,7 +147,6 @@ main {
 
 .score {
     grid-area: score;
-    border: red 1px solid;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas: 
@@ -193,12 +192,12 @@ h2 {
 #points-store {
     text-align: center;
     font-size: 3em;
-    color: rgb(107, 47, 47);
+    color: white;
 
 }
 
 #win-tracker, #loss-tracker {
     font-size: 2em; 
-    color: black;
+    color: white;
     text-align: center;
 }

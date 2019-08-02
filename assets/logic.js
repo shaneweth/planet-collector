@@ -8,13 +8,12 @@ $(document).ready(function () {
     let targetNumber = Math.floor(Math.random() * (targetMax - targetMin + 1) + targetMin);
 
     $(".resetBtn").on("click", function () {
-        console.log("reset");
+        resetNumber();
     })
 
     function resetNumber() {
         // point storage
 
-        $(".targetNumber").text(targetNumber);
         // assign a random number value to .quarter-circle's
 
         let planet1 = $(".quarter-circle-1");
@@ -40,6 +39,9 @@ $(document).ready(function () {
     }
 
     function game() {
+
+        $(".targetNumber").text(targetNumber);
+
         // click listeners for qc's
         $(".quarter-circle-1").on("click", function () {
             let planetVal1 = ($(this).attr("data-points"));
@@ -76,10 +78,12 @@ $(document).ready(function () {
         if (pointStore === targetNumber) {
             winTrack++;
             $("#win-tracker").text("You've collected " + winTrack + ". Well Done.")
+            
             pointStore = 0;
             game();
             resetNumber();
             console.log("game on");
+
         }
         else if (pointStore > targetNumber) {
             lossTrack++;

@@ -38,6 +38,8 @@ main {
     height: 10em;
     border: 1px solid white;
     border-radius: 100%;
+    color: white;
+    text-align: center;
 }
 
 .center-circle:hover {
